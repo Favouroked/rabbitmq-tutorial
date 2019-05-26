@@ -18,7 +18,7 @@ async def test(request):
 async def trigger(request):
     data = request.raw_args
     print(data)
-    if not data or 'book_url' not in data or 'start_chapter' not in data:
+    if not data or 'start_chapter' not in data or 'end_chapter' not in data:
         return json({"response": "Please provide 'book_url', 'start_chapter' and 'end_chapter'(optional)"})
     print('Pushing data to queue')
     rabbitMq.push_to_queue(data)

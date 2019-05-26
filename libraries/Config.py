@@ -12,4 +12,8 @@ config = {
         'host': os.getenv('APP_HOST'),
         'port': os.getenv('APP_PORT')
     },
+    'mailgun': {
+        'domain': os.getenv('MAILGUN_DOMAIN'),
+        'apiKey': os.getenv('MAILGUN_API_KEY')
+    }
 }

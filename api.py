@@ -18,12 +18,12 @@ async def test(request):
 async def trigger(request):
     data = request.raw_args
     print(data)
-    if not data or 'start_chapter' not in data or 'end_chapter' not in data:
-        return json({"response": "Please provide 'book_url', 'start_chapter' and 'end_chapter'(optional)"})
+    if not data or 'email' not in data or 'start_chapter' not in data or 'end_chapter' not in data:
+        return json({"response": "Please provide 'email', 'start_chapter' and 'end_chapter'"})
     print('Pushing data to queue')
     rabbitMq.push_to_queue(data)
     return json(
-        {'status': True, 'message': 'Your job has been queued'},
+        {'status': True, 'message': 'Your work has been queued. The pdf will be sent to your e-mail'},
         headers={'Content-Type': 'application/json'},
         status=200
     )

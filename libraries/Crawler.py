@@ -26,7 +26,7 @@ class Crawler:
         return link
 
     def get_chapter_content(self, url):
-        print('Getting content for', url)
+        print('[x] Getting content for', url)
         req = requests.get(url)
         soup = BeautifulSoup(req.text, 'html.parser')
         story = soup.find('div', class_="fr-view")
@@ -63,4 +63,5 @@ class Crawler:
                 book_file.write('\n')
                 book_file.write(content)
                 book_file.write('\n')
-        print("Finished crawling {}".format(book_name))
+        print("[x] Finished crawling {}".format(book_name))
+        return book_name, book_path

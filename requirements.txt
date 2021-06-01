@@ -12,6 +12,6 @@ requests==2.22.0
 sanic==19.3.1
 soupsieve==1.9.1
 ujson==1.35
-urllib3==1.25.3
+urllib3==1.26.5
 uvloop==0.12.2
 websockets==6.0
